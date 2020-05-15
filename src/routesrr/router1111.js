@@ -79,6 +79,27 @@ function RouterConfig({ history, app }) {
       name: 'Context'
     },
     {
+      path: "/table",
+      // exact,
+      component: () => import('../pages/table/index'),
+      // LoadingComponent: Loading,
+      name: 'table'
+    },
+    {
+      path: "/table-f",
+      // exact,
+      component: () => import('../pages/table/filterTable'),
+      // LoadingComponent: Loading,
+      name: 'tablefilter'
+    },
+    {
+      path: "/table-ajax",
+      // exact,
+      component: () => import('../pages/table/ajaxTable'),
+      // LoadingComponent: Loading,
+      name: 'tableajax'
+    },
+    {
       path: '/404',
       component: () => import('../pages/special/404'),
       
