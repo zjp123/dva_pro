@@ -9,7 +9,7 @@ const path = require('path')
 // console.log(process.env.NODE_ENV, 'jsjsjsj')
 
 const isDev = process.env.NODE_ENV === 'development'
-console.log(isDev,'-------')
+console.log(isDev,'-------dev')
 let config
     // console.log(path.join(__dirname, '../src/main.js'), 'ddddd')
 

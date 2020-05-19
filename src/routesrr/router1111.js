@@ -100,6 +100,13 @@ function RouterConfig({ history, app }) {
       name: 'tableajax'
     },
     {
+      path: "/table-edit",
+      // exact,
+      component: () => import('../pages/table/editTable'),
+      // LoadingComponent: Loading,
+      name: 'tableedit'
+    },
+    {
       path: '/404',
       component: () => import('../pages/special/404'),
       
