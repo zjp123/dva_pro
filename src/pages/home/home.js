@@ -5,7 +5,10 @@ import App from './fuzujian'
 import HocRefs from './refz'
 import Refzhuanfa from './ctt'
 
-
+@connect(({ home, loading }) => ({
+    loading,
+    home
+}))
 class Home extends Component{
     constructor(props){
         super(props)
@@ -14,17 +17,38 @@ class Home extends Component{
         this.gaoji = React.createRef();
 
     }
+    homeSyncTest = async() => {
+    
+        const res = await this.props.dispatch(
+            {type: 'home/propmissHome'}
+        )
+        // const {data:{data:{}}} = res;
+        // console.log(res, 'bbbbbbbbbbbb');
+        const {data} = res;
+        // console.log(data, 'aaaaaaa');
+
+        return data;
+    }
     componentDidMount(){
-        console.log(this.ctt.current.value, 'this.ctt')
+        console.log(this.ctt.current.value, 'this.ctt');
+        const aa = this.homeSyncTest();
+        console.log(aa, 'homeSyncTesthomeSyncTest');
+        // this.homeSyncTest().then((res)=>{
+        //     console.log(res, 'homeSyncTest');
+        // })
         // console.log(this.state)
         // console.log(this.dynamics)
         // this.props.dispatch({type: 'count/add'})
-        const data = this.props.propmissTest2()
-        // console.log(data)
-        data.then(res=>{
-            console.log(res)
-        })
+        // const data = this.props.propmissTest2()
+        // // console.log(data)
+        // data.then(res=>{
+        //     console.log(res)
+        // })
+        
 
+    }
+    *aa(){
+        yield 88
     }
     clickHandle(){
         // console.log(888888)
