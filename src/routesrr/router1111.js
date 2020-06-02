@@ -62,6 +62,12 @@ function RouterConfig({ history, app }) {
       name: 'mapform'
     },
     {
+      path: "/parent-son",
+      component: () => import('../pages/parent-son/parent-son'),
+      // LoadingComponent: Loading,
+      name: 'parent-son'
+    },
+    {
       path: "/consumer",
       component: () => import('../pages/consumer/consumer'),
       name: 'consumer'
