@@ -63,9 +63,21 @@ function RouterConfig({ history, app }) {
     },
     {
       path: "/parent-son",
-      component: () => import('../pages/parent-son/parent-son'),
+      component: () => import('../pages/parent-son-class/parent-son'),
       // LoadingComponent: Loading,
       name: 'parent-son'
+    },
+    {
+      path: "/parent-son-func",
+      component: () => import('../pages/parent-son-func/parent-son'),
+      // LoadingComponent: Loading,
+      name: 'parent-son-func'
+    },
+    {
+      path: "/parent-son-useImp",
+      component: () => import('../pages/parent-son-useImperativeHandle/parent-son'),
+      // LoadingComponent: Loading,
+      name: 'parent-son-useImperativeHandle'
     },
     {
       path: "/consumer",
@@ -83,6 +95,12 @@ function RouterConfig({ history, app }) {
       component: () => import('../pages/context/index'),
       // LoadingComponent: Loading,
       name: 'Context'
+    },
+    {
+      path: "/context-param",
+      component: () => import('../pages/context-params/context-params'),
+      // LoadingComponent: Loading,
+      name: 'Context-param'
     },
     {
       path: "/table",

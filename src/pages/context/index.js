@@ -25,20 +25,28 @@ class ThemedButton extends React.Component {
   render() {
      console.log(this.context, 'ThemeContext')
 
-    return <Button theme={this.context.zjp} >失敬失敬{this.context.zjp}</Button>
+    return <Button 
+              theme={this.context.zjp} 
+            >
+              失敬失敬
+              {this.context.zjp}
+           </Button>
   }
 }
 
 class ContextCom extends React.Component{
-
+    
     render() {
         // 使用一个 Provider 来将当前的 theme 传递给以下的组件树。
         // 无论多深，任何组件都能读取这个值。
         // 在这个例子中，我们将 “dark” 作为当前的值传递下去。
         return (
-          <ThemeContext.Provider value={{zjp:'zjp', age:18}}>
+          <ThemeContext.Provider value={{zjp: 'zjp', age: 18}}>
             <Toolbar />
           </ThemeContext.Provider>
+        
+          // <Toolbar /> 不用ThemeContext.Provider 包裹的话，那个默认值就可以生效了
+          
         );
       }
 }
